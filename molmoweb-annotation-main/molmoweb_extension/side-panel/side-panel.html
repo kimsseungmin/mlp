@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Task Study</title>
+    <link rel="stylesheet" href="side-panel.css">
+</head>
+<body>
+    <div id="side-panel">
+        <h1>Task annotation</h1>
+        <div id="instructions-and-answers">
+            <details open class="sticky-section">
+                <summary>Latest Screenshot <span id="screenshot-count" style="display:inline-block; min-width:18px; padding:1px 6px; margin-left:6px; border-radius:10px; background:#10b981; color:#fff; font-size:12px; font-weight:600; text-align:center;">0</span></summary>
+                <div id="latest-screenshot-container">
+                    <div id="screenshot-draw-wrap" style="position: relative; display: inline-block; max-width: 100%;">
+                        <img id="latest-screenshot" style="max-width: 100%; height: auto; display: none; cursor: crosshair; user-select: none;" alt="Latest screenshot" draggable="false">
+                    </div>
+                    <p id="no-screenshot-message">No screenshot captured yet.</p>
+                    <p id="draw-bbox-hint" style="display:none; font-size:12px; color:#64748b;">↑ 클릭한 영역을 마우스로 드래그하면 click 액션(bbox)으로 저장돼요.</p>
+                    <br>
+                    <div id="screenshot-loading-spinner" class="loading-spinner" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Capturing screenshot...</p>
+                    </div>
+                </div>
+            </details>
+
+            <br>
+
+            <details open>
+                <summary>Instructions</summary>
+                <p id="dynamic-instruction">Loading task instruction...</p>
+            </details>
+
+            <br>
+
+            <details>
+                <summary>Task Metadata</summary>
+                <div style="font-size:11px; color:#94a3b8; margin:4px 0;">task_type을 고르면 필드가 나타나요. 저장하면 세션 업로드 시 <b>task_metadata.json</b>으로 저장됩니다. (body는 + 로 여러 개)</div>
+                <div id="meta-app"></div>
+                <button id="meta-save-btn" class="button green" type="button" style="width:100%; margin-top:8px;">💾 메타데이터 저장</button>
+                <span id="meta-status" style="font-size:12px; font-weight:600; margin-left:6px;"></span>
+            </details>
+
+            <br>
+
+            <div style="font-size:12px; color:#64748b; margin-bottom:4px;">수동 캡처</div>
+            <div style="display:flex; gap:8px;">
+                <button id="manual-click-btn" class="button green" type="button" style="flex:1;">📸 click</button>
+                <button id="manual-doubleclick-btn" class="button green" type="button" style="flex:1;">📸 double_click</button>
+            </div>
+            <button id="manual-drag-btn" class="button green" type="button" style="width:100%; margin-top:8px;">📸 drag (시작→끝 드래그)</button>
+            <button id="manual-clear-btn" class="button green" type="button" style="width:100%; margin-top:8px;">🧹 clear (입력칸 비우기)</button>
+            <div style="font-size:11px; color:#94a3b8; margin-top:2px;">비울 <b>입력칸을 먼저 클릭</b>한 뒤 눌러주세요. 그 클릭 좌표로 <b>clear(x,y)</b>가 저장됩니다. (그냥 backspace로 지우면 clear가 아니라 type으로 기록돼요)</div>
+            <div style="font-size:11px; color:#94a3b8; margin-top:2px;">캡처 후 큰 창에서 영역(click/double_click)이나 시작→끝(drag)을 드래그하세요. 팝업/오버레이(포커스 잃으면 닫힘)는 버튼 대신 페이지에서 <b>F1</b> 키(click 전용) — 포커스를 안 뺏어 팝업이 열린 채 캡처됩니다.</div>
+
+            <div style="font-size:12px; color:#64748b; margin:10px 0 4px;">이미지로 캡처 (네이티브 드롭다운·파일창 등, 자동 캡처 불가한 것)</div>
+            <div id="img-drop" style="border:1px dashed #94a3b8; border-radius:6px; padding:10px; text-align:center; font-size:11px; color:#64748b;">
+                여기에 <b>붙여넣기</b>(Ctrl+V / ⌘V) 또는 이미지 파일 <b>드롭</b><br>
+                <input id="img-file" type="file" accept="image/*" style="margin-top:6px; font-size:11px;">
+            </div>
+            <div style="font-size:11px; color:#94a3b8; margin-top:2px;">OS 스크린샷을 클립보드로: <b>Mac ⌃⌘⇧4</b> / <b>Win ⊞+Shift+S</b>. 파일로 찍었으면 위에서 업로드하세요.</div>
+            <img id="img-preview" style="max-width:100%; margin-top:6px; display:none; border:1px solid #ccc; border-radius:4px;">
+            <div style="display:flex; gap:8px; margin-top:6px;">
+                <button id="img-click-btn" class="button green" type="button" style="flex:1;" disabled>🖼️ click 그리기</button>
+                <button id="img-drag-btn" class="button green" type="button" style="flex:1;" disabled>🖼️ drag 그리기</button>
+            </div>
+            <div style="display:flex; gap:8px; margin-top:8px;">
+                <input id="manual-type-value" type="text" placeholder="입력한 값 (type)" style="flex:1; padding:6px;">
+                <button id="manual-type-btn" class="button green" type="button">📸 type</button>
+            </div>
+            <div style="display:flex; gap:8px; margin-top:8px;">
+                <input id="manual-hotkey-value" type="text" placeholder="단축키 예: ctrl+c" style="flex:1; padding:6px;">
+                <button id="manual-hotkey-btn" class="button green" type="button">⌨️ hotkey</button>
+            </div>
+            <button id="manual-wait-btn" class="button green" type="button" style="width:100%; margin-top:8px;">⏳ wait (로딩 대기)</button>
+            <div style="display:flex; gap:8px; margin-top:8px;">
+                <button id="manual-goback-btn" class="button green" type="button" style="flex:1;">◀ go_back</button>
+                <button id="manual-goforward-btn" class="button green" type="button" style="flex:1;">go_forward ▶</button>
+            </div>
+
+            <br><br>
+
+            <details>
+                <summary>Final Answer</summary>
+                <form id="final-answer-form" class="action-form">
+                    <label>
+                        <textarea name="answer" class="textarea" required placeholder="Type your final answer here..."></textarea>
+                    </label>
+                    <button class="button pink" type="submit">Send and Finish</button>
+                    <p id="final-answer-form-loading-indicator" data-hidden="true" style="font-weight: bold;">Uploading...</p>
+                    <p>Please wait a few moments after pressing Send and Finish.</p>
+                </form>
+            </details>
+
+        </div>
+        <div id="session-finished-instructions" data-hidden="true">
+            <p>Thank you for recording your session. Please go to <a id="redirect-location"></a> to ensure your contribution has been recorded. You can return to the starting page in your other window if you want to view the events we recorded.</p>
+        </div>
+
+        <div id="upload-failed-instructions" data-hidden="true">
+            Something went wrong when uploading your session. Please try again.
+            <button id="retry-upload-button">Retry upload</button>
+            More details:
+            <div id="upload-failed-details"></div>
+        </div>
+
+        <details open>
+            <summary>Previous Messages</summary>
+            <ol id="user-messages-list"></ol>
+        </details>
+
+    </div> 
+    <script src="./side-panel.js"></script>
+</body>
+</html>

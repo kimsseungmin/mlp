@@ -1,0 +1,220 @@
+{
+  "study_title": "Merged annotation tasks",
+  "tasks": {
+    "airbnb_1": {
+      "domain": "airbnb_1",
+      "instruction": "숙소 즐겨찾기 하기",
+      "task_name": "airbnb_1"
+    },
+    "airbnb_2": {
+      "domain": "airbnb_2",
+      "instruction": "숙소 즐겨찾기 취소하기",
+      "task_name": "airbnb_2"
+    },
+    "coupang_1": {
+      "domain": "coupang_1",
+      "instruction": "쿠팡에서 장바구니 삭제하기",
+      "task_name": "coupang_1"
+    },
+    "google_drive_1": {
+      "domain": "google_drive_1",
+      "instruction": "구글 드라이브 폴더 생성하기",
+      "task_name": "google_drive_1"
+    },
+    "google_drive_2": {
+      "domain": "google_drive_2",
+      "instruction": "구글 드라이브 파일 추가하기",
+      "task_name": "google_drive_2"
+    },
+    "google_drive_4": {
+      "domain": "google_drive_4",
+      "instruction": "구글 드라이브 폴더 삭제하기",
+      "task_name": "google_drive_4"
+    },
+    "google_drive_6": {
+      "domain": "google_drive_6",
+      "instruction": "구글 드라이브 파일 이름 바꾸기",
+      "task_name": "google_drive_6"
+    },
+    "google_drive_7": {
+      "domain": "google_drive_7",
+      "instruction": "구글 드라이브 폴더 공유하기",
+      "task_name": "google_drive_7"
+    },
+    "gov_1": {
+      "domain": "gov_1",
+      "instruction": "운전경력증명서 발급하기",
+      "task_name": "gov_1"
+    },
+    "gov_2": {
+      "domain": "gov_2",
+      "instruction": "건강보험자격득실확인서 발급하기",
+      "task_name": "gov_2"
+    },
+    "gov_3": {
+      "domain": "gov_3",
+      "instruction": "예방접종증명서 발급하기",
+      "task_name": "gov_3"
+    },
+    "gov_4": {
+      "domain": "gov_4",
+      "instruction": "주민등록등본 발급하기",
+      "task_name": "gov_4"
+    },
+    "hanbat_1": {
+      "domain": "hanbat_1",
+      "instruction": "한밭대에서 강의 시청하기",
+      "task_name": "hanbat_1"
+    },
+    "instagram_2": {
+      "domain": "instagram_2",
+      "instruction": "인스타 게시글 좋아요 누르기",
+      "task_name": "instagram_2"
+    },
+    "instagram_3": {
+      "domain": "instagram_3",
+      "instruction": "인스타 팔로우하기",
+      "task_name": "instagram_3"
+    },
+    "instagram_4": {
+      "domain": "instagram_4",
+      "instruction": "인스타 디엠 보내기",
+      "task_name": "instagram_4"
+    },
+    "instagram_5": {
+      "domain": "instagram_5",
+      "instruction": "인스타 게시글 댓글 달기",
+      "task_name": "instagram_5"
+    },
+    "kmooc_1": {
+      "domain": "kmooc_1",
+      "instruction": "KMOOC에서 강의 수강 신청하기",
+      "task_name": "kmooc_1"
+    },
+    "kmooc_2": {
+      "domain": "kmooc_2",
+      "instruction": "KMOOC에서 강의 수강 취소하기",
+      "task_name": "kmooc_2"
+    },
+    "kmooc_3": {
+      "domain": "kmooc_3",
+      "instruction": "KMOOC에서 강의 듣기",
+      "task_name": "kmooc_3"
+    },
+    "lms_1": {
+      "domain": "lms_1",
+      "instruction": "LMS 과제 제출하기",
+      "task_name": "lms_1"
+    },
+    "lms_2": {
+      "domain": "lms_2",
+      "instruction": "LMS 전체게시물 확인하기",
+      "task_name": "lms_2"
+    },
+    "lms_3": {
+      "domain": "lms_3",
+      "instruction": "LMS 강의자료 다운하기",
+      "task_name": "lms_3"
+    },
+    "lms_4": {
+      "domain": "lms_4",
+      "instruction": "LMS 강의영상 재생하기",
+      "task_name": "lms_4"
+    },
+    "naver_1": {
+      "domain": "naver_1",
+      "instruction": "네이버 블로그 좋아요 누르기",
+      "task_name": "naver_1"
+    },
+    "naver_2": {
+      "domain": "naver_2",
+      "instruction": "네이버 블로그 댓글 달기",
+      "task_name": "naver_2"
+    },
+    "trip_1": {
+      "domain": "trip_1",
+      "instruction": "숙소 즐겨찾기 하기",
+      "task_name": "trip_1"
+    },
+    "trip_2": {
+      "domain": "trip_2",
+      "instruction": "숙소 즐겨찾기 취소하기",
+      "task_name": "trip_2"
+    },
+    "youtube_1": {
+      "domain": "youtube_1",
+      "instruction": "유튜브 영상 올리기",
+      "task_name": "youtube_1"
+    },
+    "youtube_2": {
+      "domain": "youtube_1",
+      "instruction": "유튜브 영상 삭제하기",
+      "task_name": "youtube_2"
+    },
+    "Daum_mail_1": {
+      "domain": "Daum_mail_1",
+      "instruction": "DaumMail에서 메일 보내기",
+      "task_name": "Daum_mail_1"
+    },
+    "Notion_3": {
+      "domain": "Notion_3",
+      "instruction": "Notion에서 문서 삭제하기",
+      "task_name": "Notion_3"
+    },
+    "naver_mail_1": {
+      "domain": "naver_mail_1",
+      "instruction": "NaverMail에서 메일 보내기",
+      "task_name": "naver_mail_1"
+    },
+    "Daum_mail_2": {
+      "domain": "Daum_mail_2",
+      "instruction": "DaumMail에서 나에게 메일 보내기",
+      "task_name": "Daum_mail_2"
+    },
+    "coopang": {
+      "domain": "coopang",
+      "instruction": "쿠팡 음식 주문하기",
+      "task_name": "coopang"
+    },
+    "Notion_2": {
+      "domain": "Notion_2",
+      "instruction": "Notion에서 문서 편집하기",
+      "task_name": "Notion_2"
+    },
+    "google_docs_3": {
+      "domain": "google_docs_3",
+      "instruction": "Google Docs에서 문서 삭제하기",
+      "task_name": "google_docs_3"
+    },
+    "google_drive": {
+      "domain": "google_drive",
+      "instruction": "구글 드라이브 파일 링크 생성하기",
+      "task_name": "google_drive"
+    },
+    "naver_mail_3": {
+      "domain": "naver_mail_3",
+      "instruction": "NaverMail에서 메일 삭제하기",
+      "task_name": "naver_mail_3"
+    },
+    "Daum_mail_3": {
+      "domain": "Daum_mail_3",
+      "instruction": "DaumMail에서 메일 삭제하기",
+      "task_name": "Daum_mail_3"
+    },
+    "Notion_1": {
+      "domain": "Notion_1",
+      "instruction": "Notion에서 문서 만들기",
+      "task_name": "Notion_1"
+    },
+    "brunch_1": {
+      "domain": "brunch_1",
+      "instruction": "브런치 글쓰기",
+      "task_name": "brunch_1"
+    },
+    "naver_mail_2": {
+      "domain": "naver_mail_2",
+      "instruction": "NaverMail에서 나에게 메일 보내기",
+      "task_name": "naver_mail_2"
+    }
+  }
+}

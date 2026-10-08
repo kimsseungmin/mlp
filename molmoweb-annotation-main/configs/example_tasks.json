@@ -1,0 +1,15 @@
+{
+  "study_title": "Example web browsing annotation",
+  "tasks": {
+    "coupang_card": {
+      "domain": "coupang_card",
+      "instruction": "쿠팡에서 카드 정보를 등록하세요.",
+      "task_name": "coupang_card"
+    },
+    "demo": {
+      "domain": "demo",
+      "instruction": "demo",
+      "task_name": "demo"
+    }
+  }
+}

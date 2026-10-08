@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>클릭 영역 그리기</title>
+    <style>
+        body { margin: 0; font-family: -apple-system, sans-serif; background: #1e1e1e; color: #fff; }
+        #toolbar {
+            position: sticky; top: 0; z-index: 10;
+            display: flex; align-items: center; gap: 12px;
+            padding: 10px 14px; background: #111; box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+        }
+        #toolbar .hint { color: #aaa; font-size: 14px; }
+        #toolbar #status { color: #10b981; font-size: 14px; font-weight: 600; }
+        button { padding: 8px 16px; border: 0; border-radius: 6px; cursor: pointer; font-weight: 600; }
+        #save { background: #10b981; color: #fff; }
+        #cancel { background: #444; color: #fff; }
+        #scroll { overflow: auto; max-height: calc(100vh - 56px); padding: 12px; }
+        #wrap { position: relative; display: inline-block; }
+        #shot { display: block; user-select: none; -webkit-user-drag: none; }
+    </style>
+</head>
+<body>
+    <div id="toolbar">
+        <b id="draw-title">클릭 영역 그리기</b>
+        <span class="hint">클릭한 영역을 마우스로 드래그하세요.</span>
+        <button id="save">저장</button>
+        <button id="cancel">취소</button>
+        <span id="status"></span>
+    </div>
+    <div id="scroll">
+        <div id="wrap"><img id="shot" draggable="false" alt="screenshot"></div>
+    </div>
+    <script src="draw.js"></script>
+</body>
+</html>
